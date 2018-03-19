@@ -1,0 +1,35 @@
+Vou dar um pequeno trabalho para se familiarizarem com o ambiente de programação em Python.
+
+A tarefa é o cálculo das Componentes Principais de um conjunto muito pequeno de dados (seis das 150 flores)
+
+Tarefas
+======
+
+1) Ler os dados e armazenar na matriz de dados X, imprimir  (já feito)
+
+2) Visualizar os dados (já feito)
+
+3) Calcular e imprimir a matriz de covariância dos dados (centralizados, ou não centralizados)
+   C = ...
+
+4) Calcular e imprimir os autovalores e autovetores da matriz de covariância
+   Lambda, Phi = ...
+
+5) Calcular e imprimir a matriz dos dados centralizados, linearmente descorrelacionados
+    Y = ...
+
+6) Calcular e imprimir a primeira componente principal manualmente.
+   Ajuda: Tem que pegar o autovetor associado ao maior autovalor,
+  e depois projetar todos os pontos de X em cima deste vetor.
+  Projeção de um ponto (vetor) em cima de outro:
+      # https://en.wikibooks.org/wiki/Linear_Algebra/Orthogonal_Projection_Onto_a_Line
+
+7) Mostrar que a variância desta primeira componente é idêntico ao maior autovalor
+
+
+Data de entrega: Próxima aula 20/03 (são realmente menos que dez linhas de código)
+
+Opcional
+=======
+8) Desenhar o primeiro eixo principal (idêntico ao primeiro autovetor) no gráfico
+9) Projetar o pontos em X em cima deste eixo principal
