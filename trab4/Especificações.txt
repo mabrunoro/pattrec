@@ -1,0 +1,14 @@
+Queria o seguinte upgrade:
+
+- Definir um modelo de características (a partir das 52 características originais)
+- Definir um classificador
+- Definir um método de avaliação (validação cruzada)
+- Obter critérios de desempenho (acurácia, ...)
+
+ou
+
+- Definir uma janela de tempo do processo, adquirindo T amostras. Resultado: Matriz T x 52
+  * Alimentar uma rede Convolucional (CNN.py em anexo)
+  * Definir uma camada nessa rede somente com duas ou três neurônios e visualizar o conjunto de dados
+- Definir um método de avaliação (validação cruzada)
+- Obter critérios de desempenho (acurácia, ...)
