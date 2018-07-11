@@ -37,7 +37,7 @@ epochs = 30
 # class browser: pydoc -g keras
 def _buildsimplemodel(d, chan, numclasses, kernel_size, filters ):
 
-    print 'buildsimplemodel>\n\tnum_classes=', numclasses, 'dim=', d, 'channels=', chan
+    # print 'buildsimplemodel>\n\tnum_classes=', numclasses, 'dim=', d, 'channels=', chan
 
     model = Sequential()
 
@@ -91,7 +91,7 @@ def _buildsimplemodel(d, chan, numclasses, kernel_size, filters ):
 # class browser: pydoc -g keras
 def _buildmodel(d, chan, numclasses, kernel_size, filters ):
 
-    print 'buildmodel>\n\tnum_classes=', numclasses, 'dim=', d, 'channels=', chan
+    # print 'buildmodel>\n\tnum_classes=', numclasses, 'dim=', d, 'channels=', chan
 
     model = Sequential()
 
@@ -142,7 +142,7 @@ def _buildmodel(d, chan, numclasses, kernel_size, filters ):
     #print config
     from keras.utils.vis_utils import plot_model
     modelfilename = 'CNN.png'
-    print 'Dumping model to ', modelfilename
+    # print 'Dumping model to ', modelfilename
     plot_model(model, to_file=modelfilename, show_shapes=True)
 
     return model
@@ -151,8 +151,8 @@ def _buildmodel(d, chan, numclasses, kernel_size, filters ):
 def CNN( X, y, datadir, classname ):
     #print 'CNN>\n'
 
-    print 'Classifier: Convolutional Net\n'
-    print 'class browser: pydoc -g keras\n'
+    # print 'Classifier: Convolutional Net\n'
+    # print 'class browser: pydoc -g keras\n'
     n_samples, d, chan = X.shape
 
     num_classes = len(classname)
@@ -200,7 +200,7 @@ def CNN( X, y, datadir, classname ):
         #print 'After fit ', (w[0])[0,0,0] #DEBUG
 
         loss_score = model.evaluate(X_test, Y_test, batch_size=1)
-        print '\n$$$ Fold=', k, 'of ', folds, ' loss_score=', loss_score
+        # print '\n$$$ Fold=', k, 'of ', folds, ' loss_score=', loss_score
         #Y_pred = model.predict(X_test,batch_size=1, verbose=2)
         y_pred_class = model.predict_classes(X_test, batch_size=1, verbose=2)
         #print '\ny_train[0]', y_train[0], '\nY_train[0]', Y_train[0]
@@ -210,18 +210,17 @@ def CNN( X, y, datadir, classname ):
         y_test_overall = np.concatenate([y_test_overall, y_test])
         k += 1
 
-    print 'CNN Classification Report: '
+    print('CNN Classification Report: ')
     print (classification_report(y_test_overall, y_pred_overall, target_names=classname, digits=3))
-    print 'CNN Confusion Matrix: '
+    print('CNN Confusion Matrix: ')
     print (confusion_matrix(y_test_overall, y_pred_overall))
-
-    print 'CNN Classification Report: '
-    print (classification_report(y_test_overall, y_pred_overall, target_names=classname, digits=3))
-    print 'Accuracy=', '%.2f %%' % (100*accuracy_score(y_test_overall, y_pred_overall))
-    print 'Macro-averaged F1=', '%.3f' % (f1_score(y_test_overall, y_pred_overall, average='macro'))
-    print 'Micro-averaged F1=', '%.3f' % (f1_score(y_test_overall, y_pred_overall, average='micro'))
-    print 'CNN Confusion Matrix: '
-    print (confusion_matrix(y_test_overall, y_pred_overall))
+    print('CNN Classification Report: ')
+    print(classification_report(y_test_overall, y_pred_overall, target_names=classname, digits=3))
+    print('Accuracy=', '%.2f %%' % (100*accuracy_score(y_test_overall, y_pred_overall)))
+    print('Macro-averaged F1=', '%.3f' % (f1_score(y_test_overall, y_pred_overall, average='macro')))
+    print('Micro-averaged F1=', '%.3f' % (f1_score(y_test_overall, y_pred_overall, average='micro')))
+    print('CNN Confusion Matrix: ')
+    print(confusion_matrix(y_test_overall, y_pred_overall))
 
 
 def CNN_train_test( X_train, y_train, X_test, y_test, classname ):
@@ -235,10 +234,10 @@ def CNN_train_test( X_train, y_train, X_test, y_test, classname ):
     model.compile(loss=loss,optimizer=optimizer) #Must reset weights
     model.fit(X_train, Y_train, batch_size=1, epochs=epochs, verbose=1)
     y_pred = model.predict_classes(X_test, batch_size=1, verbose=2)
-    print 'CNN Classification Report: '
+    # print 'CNN Classification Report: '
     print (classification_report(y_test, y_pred, target_names=classname, digits=3))
-    print 'Accuracy=', '%.2f %%' % (100*accuracy_score(y_test, y_pred))
-    print 'CNN Confusion Matrix: '
+    # print 'Accuracy=', '%.2f %%' % (100*accuracy_score(y_test, y_pred))
+    # print 'CNN Confusion Matrix: '
     print (confusion_matrix(y_test, y_pred))
 
 
