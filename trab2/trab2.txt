@@ -1,0 +1,14 @@
+1) Compilar e rodar o simulador TE
+Compilar:
+Linux: 2fortran
+Windows: 2fortran
+
+2) Gerar um arquivo de configuração de uma ou mais falhas
+
+3) Rodar
+
+4) Visualizar (dois features) usando 'visualize.py'
+
+5) Gerar PCA e visualizar em 2-D e 3-D
+
+6) Calcular a variância total acumulada em 2-D e 3-D

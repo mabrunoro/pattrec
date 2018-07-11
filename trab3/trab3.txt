@@ -1,0 +1,17 @@
+Trabalho: entrega até 22/05
+
+Do livro
+Duda et al - Pattern Classification (2nd ed) - Wiley 2001
+
+
+
+Os pesos do perceptron com uma camada oculta foram definidos manualmente
+para poder separar as duas classes do problema XOR (Ou exclusivo)
+
+
+
+Tarefa: Substituir a função de ativação pela função ReLU
+e aprender pesos que conseguem classificar o XOR da mesma maneira.
+Programação em Python.
+
+Exemplo de MLP em anexo
