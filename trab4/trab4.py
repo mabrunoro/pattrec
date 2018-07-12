@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Aluno: Marco Aurélio Brunoro Thomé
+
 import sys
 import csv
 import numpy as np
